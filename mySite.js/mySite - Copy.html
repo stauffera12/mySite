@@ -1,0 +1,239 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset-utf-8" />
+		<title>My Site</title>
+		<script src="mySite.js"></script>
+	<style>
+	body{
+ /* background-color:#292B2C;*/
+ font-family: 'PT Sans', sans-serif;
+}
+a{
+	outline: 0;
+	text-decoration: none;
+}
+.modal-bg{
+	position:fixed;
+	left:0;right:0;
+	top:0;bottom:0;
+	z-index:100;
+	background-image:linear-gradient(purple, aqua);
+}
+
+.button{
+	position:relative;
+	font-size:17px;
+	background:#DA244F;
+	border-radius: 3px;
+	border-bottom: 3px solid #B5002A;
+	padding:7px 15px;
+	color:#fff;
+	cursor:pointer;
+	float:right;
+	margin:50px 70px;
+ 	-webkit-transition:margin 100ms;
+	-moz-transition:margin 100ms;
+	transition:margin 100ms ;	
+}
+form{
+	display:block;
+	margin:30px;
+  padding:px;
+}
+form *{
+	margin:10px;
+}
+input:focus{
+  outline:0;
+}
+input{
+	width:240px;
+	padding:10px;
+	border:3px solid Fuchsia;
+	border-radius:15px;
+	background:Aqua;
+}
+.nice{
+	position:relative;
+	padding: 8px 12px;
+	margin-top:-130px;
+	margin-left:-190px;
+	width: 100px; 
+	top:30%;
+	left:92%;
+	z-index:101;
+	background: aqua;
+	border: none;
+	color: #fff;
+	border-bottom: 3px solid Fuchsia;
+	border-radius: 10px;
+	cursor: pointer;
+}
+#button:hover{
+	background-color: Fuchsia;
+	border-bottom: 3px solid aqua;
+	border-radius: 10px;
+}
+#forgot-link{
+	font-size: 14px;
+	line-height: 45px;
+	color: Aqua;
+	display: inline-block;
+	position:relative;
+	top:-15px;
+}
+#forgot-link:hover{
+	color: Fuchsia;
+}
+ #create-link {
+    font-size: 14px;
+    width: 115px;
+    line-height: 10px;
+    margin-left: 5%;
+    color: Aqua;
+    display: inline-block;
+    cursor: pointer;
+    background: none;
+    border: none;
+    position: relative;
+    top: -15px;
+        }
+#create-link:hover{
+	color: Fuchsia;
+}
+
+#modal{ 
+	position:absolute;
+	background-color:none;
+	top:50%; 
+	left:50%;
+	z-index:101;
+	border-radius:20px;
+	width:340px;
+	height:260px;
+	margin-top:-130px;
+	margin-left:-170px;
+	box-shadow:0 0 50px 0 rgba(0,0,0,0.3);
+}
+//This is the code for the pop up Create Account window
+        .openBtn {
+            display: flex;
+            justify-content: left;
+        }
+
+        .openButton {
+            border: 3px solid black;
+            border-radius: 50px;
+            background-color: white;
+            color: Aqua;
+            padding: 14px 20px;
+            cursor: pointer;
+            position: fixed;
+        }
+
+        .loginPopup {
+            position: center;
+            text-align: center;
+			color:Aqua;
+            width: 100%;
+			font-weight:bold;
+			text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+
+        .formPopup {
+            display: none;
+			position:relative;
+			top:-350px;
+            width: 400px;
+            transform: translate(-50%, 5%);
+            border: 3px solid black;
+			border-radius: 20px;
+			background-color:White;
+			text-align:center;
+			margin-left:128px;
+        }
+
+        .formContainer {
+            max-width: 300px;
+            padding: 20px;
+            background-color: white;
+        }
+        .btn {
+            position: center;
+            text-align: center;
+            color: Aqua;
+            width: 50%;
+            font-weight: bold;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+			border-radius:20px;
+        }
+		.btn:hover{
+			color:fuchsia;
+		}
+
+	</style>
+</head>
+	<body>
+		<div class="modal-bg">
+			<div id="modal">
+				<form>
+					<center><input id="username" name="username" type="textbox" placeholder="Username" required></center>
+					<center><input id="password" name="password" type="password" placeholder="Password" required></center>
+					<input type="button" id="forgot-link" onclick="openForm()" value="Forgot Password?" />
+					<div class="loginPopup">
+						<div class="formPopup" id="popupForm">
+							<form action="/action_page.php" class="formContainer">
+								<h2>Identify Yourself!</h2>
+								<label for="email">
+									<strong>E-mail</strong><br />
+								</label>
+								<input type="text" id="email" name="email" required><br />
+								<label for="user">
+									<strong>Username</strong><br />
+								</label>
+								<input type="text" id="user" name="user" required><br />
+								<label for="psw">
+									<strong>Password</strong><br />
+								</label>
+								<input id="password" name="password" type="password" required><br />
+								<label for="psw">
+									<strong>Re-enter Password</strong><br />
+								</label>
+								<input id="password" name="password" type="password" required><br />
+								<button type="submit" class="btn">Create</button>
+								<button type="button" class="btn cancel" onclick="closeForm()">No!</button>
+							</form>
+						</div>
+					</div>
+					<input type="button" id="create-link" onclick="openForm()" value="Create Account" />
+					<div class="loginPopup">
+						<div class="formPopup" id="popupForm">
+							<form action="/action_page.php" class="formContainer">
+								<h2>Identify Yourself!</h2>
+								<label for="email">
+									<strong>E-mail</strong><br />
+								</label>
+								<input type="text" id="email" name="email" required><br />
+								<label for="user">
+									<strong>Username</strong><br />
+								</label>
+								<input type="text" id="user" name="user" required><br />
+								<label for="psw">
+									<strong>Password</strong><br />
+								</label>
+								<input id="password" name="password" type="password" required><br />
+								<label for="psw">
+									<strong>Re-enter Password</strong><br />
+								</label>
+								<input id="password" name="password" type="password" required><br />
+								<button type="submit" class="btn">Create</button>
+								<button type="button" class="btn cancel" onclick="closeForm()">No!</button>
+							</form>
+						</div>
+					</div>
+					<input type="button" class="nice" id="button" onclick="window.location.href='file:///C:/Users/austi/Mysite/mySite.js/mySiteHome.html'" value="Submit" />
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

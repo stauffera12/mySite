@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+
+        #background {
+            background-image: url(txtbg.jpg);
+            padding: 40px;
+        }
+
+        #textbox {
+            width: auto;
+            height: 100px;
+            opacity: 0.8;
+            background-color: black;
+            padding: 10px;
+        }
+
+        .text {
+            color: white;
+            text-align: center;
+            padding-top: 35px;
+        }
+        a {
+            outline: 0;
+            text-decoration: none;
+        }
+
+        .modal-bg {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 100;
+            background-image: linear-gradient(purple, aqua);
+        }
+
+        .button {
+            position: relative;
+            font-size: 17px;
+            background: #DA244F;
+            border-radius: 3px;
+            border-bottom: 3px solid #B5002A;
+            padding: 7px 15px;
+            color: #fff;
+            cursor: pointer;
+            float: right;
+            margin: 50px 70px;
+            -webkit-transition: margin 100ms;
+            -moz-transition: margin 100ms;
+            transition: margin 100ms;
+        }
+
+        form {
+            display: block;
+            margin: 30px;
+            padding: px;
+        }
+
+            form * {
+                margin: 10px;
+            }
+
+        input:focus {
+            outline: 0;
+        }
+
+        input {
+            width: 240px;
+            padding: 10px;
+            border: 3px solid Fuchsia;
+            border-radius: 15px;
+            background: Aqua;
+        }
+
+        .nice {
+            position: absolute;
+            padding: 8px 12px;
+            margin-top: -130px;
+            margin-left: -190px;
+            width: 100px;
+            top: 135%;
+            left: 91%;
+            z-index: 101;
+            background: aqua;
+            border: none;
+            color: #fff;
+            border-bottom: 3px solid Fuchsia;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #button:hover {
+            background-color: Fuchsia;
+            border-bottom: 3px solid aqua;
+            border-radius: 10px;
+        }
+
+        #forgot-link {
+            font-size: 14px;
+            line-height: 45px;
+            color: Aqua;
+            display: inline-block;
+        }
+
+            #forgot-link:hover {
+                color: Fuchsia;
+            }
+
+        #create-link {
+            font-size: 14px;
+            width: 115px;
+            line-height: 10px;
+            margin-left: 5%;
+            color: Aqua;
+            display: inline-block;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+            #create-link:hover {
+                color: Fuchsia;
+            }
+
+        #modal {
+            position: absolute;
+            background-color: Black;
+            top: 50%;
+            left: 50%;
+            z-index: 101;
+            border-radius: 20px;
+            width: 340px;
+            height: 260px;
+            margin-top: -130px;
+            margin-left: -170px;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.3);
+        }
+    </style>
+
+</head>
+<body>
+        <div id="textbox">
+            <div class="text">
+                Hello this is a test.
+            </div>
+        </div>
+    <div class="modal-bg">
+        <div id="modal">
+            <form>
+                <center><input id="username" name="username" type="textbox" placeholder="Username" required></center>
+                <center><input id="password" name="password" type="password" placeholder="Password" required></center>
+                <a id="forgot-link" href="#">Forgot password?</a>
+                <input type="button" id="create-link" onclick="createAccount()" value="Create Account" />
+                <input type="button" class="nice" id="button" onclick="window.location.href='file:///C:/Users/austi/Mysite/mySite.js/mySiteHome.html'" value="Submit" />
+            </form>
+        </div>
+    </div>
+</body>
+</html>
