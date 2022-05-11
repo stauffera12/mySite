@@ -88,7 +88,7 @@ input{
  #create-link {
     font-size: 14px;
     width: 115px;
-    line-height: 10px;
+    line-height: 5px;
     margin-left: 5%;
     color: Aqua;
     display: inline-block;
@@ -96,7 +96,21 @@ input{
     background: none;
     border: none;
     position: relative;
-    top: -15px;
+    top: -68px;
+	left: 170px;
+        }
+ #create-linkf {
+    font-size: 14px;
+    width: 130px;
+    line-height: 5px;
+    margin-left: 0%;
+    color: Aqua;
+    display: inline-block;
+    cursor: pointer;
+    background: none;
+    border: none;
+    position: relative;
+    top: -2px;
         }
 #create-link:hover{
 	color: Fuchsia;
@@ -179,7 +193,7 @@ input{
 				<form>
 					<center><input id="username" name="username" type="textbox" placeholder="Username" required></center>
 					<center><input id="password" name="password" type="password" placeholder="Password" required></center>
-					<input type="button" id="forgot-link" onclick="openForm()" value="Forgot Password?" />
+					<input type="button" id="create-linkf" onclick="openForm()" value="Forgot Password?"></input>
 					<div class="loginPopup">
 						<div class="formPopup" id="popupForm">
 							<form action="/action_page.php" class="formContainer">

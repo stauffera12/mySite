@@ -83,16 +83,32 @@ input{
 #forgot-link:hover{
 	color: Fuchsia;
 }
-#create-link{
-	font-size: 14px;
-	width: 115px;
-	line-height: 10px;
-	margin-left:5%;
-	color: Aqua;
-	display: inline-block;
-	cursor:pointer;
-	background:none;
-	border:none;
+#create-link {
+    font-size: 14px;
+    width: 115px;
+    line-height: 10px;
+    margin-left: 5%;
+    color: Aqua;
+    display: inline-block;
+    cursor: pointer;
+    background: none;
+    border: none;
+    position: relative;
+    top: -70px;
+    left: 170px;
+}
+#create-linkf {
+    font-size: 14px;
+    width: 130px;
+    line-height: 5px;
+    margin-left: 0%;
+    color: Aqua;
+    display: inline-block;
+    cursor: pointer;
+    background: none;
+    border: none;
+    position: relative;
+    top: -2px;
 }
 #create-link:hover{
 	color: Fuchsia;
@@ -198,29 +214,54 @@ input{
 	<form>
 		<center><input id="username" name="username" type="textbox" placeholder="Username" required></center>
 		<center><input id="password" name="password" type="password" placeholder="Password" required></center>
-		<a id="forgot-link" href="#">Forgot password?</a>
+		<input type="button" id="create-linkf" onclick="openForm()" value="Forgot Password?"></input>
+		<div class="loginPopup">
+			<div class="formPopup" id="popupForm">
+				<form action="/action_page.php" class="formContainer">
+					<h2>Identify Yourself!</h2>
+					<label for="email">
+						<strong>E-mail</strong><br />
+					</label>
+					<input type="text" id="email" name="email" required><br />
+					<label for="user">
+						<strong>Username</strong><br />
+					</label>
+					<input type="text" id="user" name="user" required><br />
+					<label for="psw">
+						<strong>Password</strong><br />
+					</label>
+					<input id="password" name="password" type="password" required><br />
+					<label for="psw">
+						<strong>Re-enter Password</strong><br />
+					</label>
+					<input id="password" name="password" type="password" required><br />
+					<button type="submit" class="btn">Create</button>
+					<button type="button" class="btn cancel" onclick="closeForm()">No!</button>
+				</form>
+			</div>
+		</div>
 		<input type="button" id="create-link" onclick="openForm()" value="Create Account" />
 		<div class="loginPopup">
-						<div class="formPopup" id="popupForm">
-							<form action="/action_page.php" class="formContainer">
-								<h2>Identify Yourself!</h2>
-								<label for="email">
-									<strong>E-mail</strong><br />
-								</label>
-								<input type="text" id="email" name="email" required><br />
-								<label for="user">
-									<strong>Username</strong><br />
-								</label>
-								<input type="password" id="user"  name="user" required><br />
-								<label for="psw">
-									<strong>Password</strong><br />
-								</label>
-								<input id="password" name="password" type="password" required><br />
-								<button type="submit" class="btn">Log in</button>
-								<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-							</form>
-						</div>
-					</div>
+			<div class="formPopup" id="popupForm">
+				<form action="/action_page.php" class="formContainer">
+					<h2>Identify Yourself!</h2>
+					<label for="email">
+						<strong>E-mail</strong><br />
+					</label>
+					<input type="text" id="email" name="email" required><br />
+					<label for="user">
+						<strong>Username</strong><br />
+					</label>
+					<input type="password" id="user" name="user" required><br />
+					<label for="psw">
+						<strong>Password</strong><br />
+					</label>
+					<input id="password" name="password" type="password" required><br />
+					<button type="submit" class="btn">Log in</button>
+					<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+				</form>
+			</div>
+		</div>
 		<input type="button" class="nice" id="button" onclick="window.location.href='file:///C:/Users/austi/Mysite/mySite.js/mySiteHome.html'" value="Submit" />
 	</form>
 </div>
